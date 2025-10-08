@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #141c2f;
+  --color-bg-light: #1f2a48;
+  --color-text: #ffffff;
+  --color-text-light: #cbd5e1;
+  --color-blue: #0079ff;
+  --color-gray: #697c9a;
+  --color-placeholder: #a3a3a3;
+  --color-error: #f74646;
+    --github-shadow: 0 8px 24px rgba(0,0,0,0.35);
+
+}
+/* bg-[var(--color-bg)]  */
