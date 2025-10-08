@@ -1,4 +1,3 @@
-import React from "react";
 import git from "../assets/gitt.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 

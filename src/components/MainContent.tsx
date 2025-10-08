@@ -1,4 +1,4 @@
-import  { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import SearchInput from "./SearchInput";
 import DefaultProfile from "./DefaultProfile";
@@ -19,7 +19,7 @@ const MainContent = () => {
         // Fetch default GitHub profile on page load
         const fetchDefaultProfile = async () => {
             try {
-                const res = await fetch("https://api.github.com/users/github"); 
+                const res = await fetch("https://api.github.com/users/github");
                 if (!res.ok) throw new Error("Failed to load default profile");
                 const data = await res.json();
                 setDefaultProfile(data);
@@ -68,10 +68,11 @@ const MainContent = () => {
         }
     };
 
-   
+
 
     // ✏️ Debounced suggestion handler
-    const debounceTimer = useRef<NodeJS.Timeout | null>(null);
+    const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
 
     const handleSuggestion = (value: string) => {
         setUsername(value);

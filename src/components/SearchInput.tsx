@@ -1,6 +1,7 @@
 import React from "react";
 import search from "../assets/icon-search.svg";
 
+
 interface SearchInputProps {
   value: string;
   onChange: (val: string) => void;
@@ -20,6 +21,9 @@ const SearchInput: React.FC<SearchInputProps> = ({
 }) => {
   // Decide what to show: suggestion after search OR default on page load
   const showSuggestion = suggestion || (!value && defaultSuggestion);
+
+  console.log("Suggestion data:", showSuggestion);
+
 
   return (
     <>
@@ -51,6 +55,8 @@ const SearchInput: React.FC<SearchInputProps> = ({
               alt=""
               className="w-[25px] h-[25px]"
             />
+         
+
             <div>
               <p>
                 {showSuggestion.name || showSuggestion.login}{" "}
