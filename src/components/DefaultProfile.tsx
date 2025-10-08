@@ -87,20 +87,20 @@ const DefaultProfile = () => {
     );
 };
 
-const Repositories = () => {
-    return (
+// const Repositories = () => {
+//     return (
 
 
-        <div className="bg-[linear-gradient(to_right,var(--color-bg),var(--color-bg-light))] shadow-lg rounded-xl py-2 px-3 md:w-[380px] w-[300px] flex flex-col gap-1">
-            <p>Github</p>
-            <p className="text-[10px]">Community health files for the @Github organization</p>
-            <div className="flex gap-1 text-white">
-                <p><i className="fa-solid fa-share"></i><span> 2,345</span></p>
-                <p><i className="fa-solid fa-star"></i><span>703</span></p>
-                <p>updated 4 days ago</p>
-            </div>
-        </div>
-    )
-}
+//         <div className="bg-[linear-gradient(to_right,var(--color-bg),var(--color-bg-light))] shadow-lg rounded-xl py-2 px-3 md:w-[380px] w-[300px] flex flex-col gap-1">
+//             <p>Github</p>
+//             <p className="text-[10px]">Community health files for the @Github organization</p>
+//             <div className="flex gap-1 text-white">
+//                 <p><i className="fa-solid fa-share"></i><span> 2,345</span></p>
+//                 <p><i className="fa-solid fa-star"></i><span>703</span></p>
+//                 <p>updated 4 days ago</p>
+//             </div>
+//         </div>
+//     )
+// }
 
 export default DefaultProfile;

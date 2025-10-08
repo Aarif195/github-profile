@@ -1,7 +1,7 @@
 import  { useState, useEffect } from "react";
 
 const TestAPI = () => {
-  const [username, setUsername] = useState("torvalds"); // default user
+  const [username, setUsername] = useState("torvalds"); 
   const [profile, setProfile] = useState<any>(null);
   const [repos, setRepos] = useState<any[]>([]);
 
@@ -41,6 +41,8 @@ const TestAPI = () => {
     Check console for API data
       <p>Followers: {profile?.followers}</p>
       <p>Public Repos: {profile?.public_repos}</p>
+<p>Username: {username}</p>
+<p>Total Repositories: {repos.length}</p>
 
   </div>;
 };
