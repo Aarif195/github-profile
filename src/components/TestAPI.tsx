@@ -1,7 +1,7 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const TestAPI = () => {
-  const [username, setUsername] = useState("torvalds"); 
+  const [username, setUsername] = useState("torvalds");
   const [profile, setProfile] = useState<any>(null);
   const [repos, setRepos] = useState<any[]>([]);
 
@@ -36,13 +36,20 @@ const TestAPI = () => {
   }, [username]);
 
 
-  
+
   return <div>Check console for API data
     Check console for API data
-      <p>Followers: {profile?.followers}</p>
-      <p>Public Repos: {profile?.public_repos}</p>
-<p>Username: {username}</p>
-<p>Total Repositories: {repos.length}</p>
+    <input
+      type="text"
+      value={username}
+      onChange={(e) => setUsername(e.target.value)}
+      placeholder="Enter GitHub username"
+      style={{ padding: "6px", margin: "8px 0", border: "1px solid #ccc" }}
+    />
+    <p>Followers: {profile?.followers}</p>
+    <p>Public Repos: {profile?.public_repos}</p>
+    <p>Username: {username}</p>
+    <p>Total Repositories: {repos.length}</p>
 
   </div>;
 };
