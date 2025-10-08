@@ -24,4 +24,3 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-// bg-[var(--color-bg-light)] text-[var(--color-text)]
