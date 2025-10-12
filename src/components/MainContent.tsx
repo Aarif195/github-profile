@@ -44,18 +44,29 @@ const MainContent = () => {
         setReposData([]);
 
         try {
-            // Fetching  profile
-            const profileResponse = await fetch(`https://api.github.com/users/${userToSearch}`);
-            if (!profileResponse.ok) throw new Error("User not found");
-            const profile = await profileResponse.json();
-            console.log(profile)
+            let profile;
+
+            if (
+                suggestion &&
+                suggestion.login.toLowerCase() === userToSearch.toLowerCase()
+            ) {
+                profile = suggestion;
+            } else {
+
+                const profileResponse = await fetch(
+                    `https://api.github.com/users/${userToSearch}`
+                );
+                if (!profileResponse.ok) throw new Error("User not found");
+                profile = await profileResponse.json();
+                console.log("Fetched new profile:", profile);
+            }
 
 
-            //  Fetching repository
-            const reposResponse = await fetch(`https://api.github.com/users/${userToSearch}/repos`);
+            const reposResponse = await fetch(
+                `https://api.github.com/users/${userToSearch}/repos`
+            );
             const repos = await reposResponse.json();
-            console.log(repos)
-
+            console.log("Fetched repos:", repos);
 
             if (!Array.isArray(repos)) throw new Error("Failed to load repositories");
 
@@ -68,6 +79,7 @@ const MainContent = () => {
             setLoading(false);
         }
     };
+
 
 
 
@@ -111,7 +123,7 @@ const MainContent = () => {
                     onChange={handleSuggestion}
                     onSearch={() => handleSearch()}
                     suggestion={suggestion}
-                    defaultSuggestion={defaultProfile} 
+                    defaultSuggestion={defaultProfile}
                     onSelectSuggestion={(name) => handleSearch(name)}
                 />
 

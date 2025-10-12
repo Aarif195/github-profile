@@ -27,7 +27,7 @@ interface DynamicProfileProps {
 }
 
 const DynamicProfile: React.FC<DynamicProfileProps> = ({ user, repos }) => {
-  if (!user) return null; 
+  if (!user) return null;
 
   return (
     <div className="w-full h-auto md:w-[890px] mt-8 p-2  rounded-bl-xl rounded-br-xl flex flex-col md:gap-10 gap-4">
@@ -98,7 +98,8 @@ const DynamicProfile: React.FC<DynamicProfileProps> = ({ user, repos }) => {
       {/* View all repositories */}
       <div className="flex justify-center items-center text-center">
         <button className="bg-[var(--color-bg)] py-1 px-4 cursor-pointer rounded-lg transition-all duration-300 ease-in-out ">
-          <a href={user.html_url}
+          <a
+            href={`${user.html_url}?tab=repositories`}
             target="_blank"
             rel="noreferrer"> View all repositories
           </a>
