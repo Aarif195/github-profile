@@ -1,6 +1,5 @@
 import React from "react";
 import search from "../assets/icon-search.svg";
-import heroo from "../assets/heroo.jpg";
 
 
 
