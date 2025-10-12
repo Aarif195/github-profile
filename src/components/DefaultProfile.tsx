@@ -78,7 +78,7 @@ const DefaultProfile = () => {
 
             {/* View all repositories */}
             <div className="flex justify-center items-center text-center ">
-                <button className="bg-[var(--color-bg)] py-1 px-4 cursor-pointer rounded-lg  hover:scale-110 hover:shadow-[0_6px_20px_rgba(0,198,255,0.6)] ">
+                <button className="bg-[var(--color-bg)] py-1 px-4 cursor-pointer rounded-lg  hover:scale-110 ">
                     View all repositories
                 </button>
             </div>

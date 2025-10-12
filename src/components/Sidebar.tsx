@@ -2,7 +2,7 @@
 const Sidebar = () => {
   return (
     <div className="flex flex-col gap-3">
-      <p className="bg-[var(--color-bg-light)] text-[var(--color-text)] rounded-2xl text-center md:w-[250px]  py-2 px-2 font-bold shadow-[0_12px_40px_rgba(0,198,255,0.6)] ">
+      <p className="bg-[var(--color-bg-light)] text-[var(--color-text)] rounded-2xl text-center md:w-[250px]  py-2 px-2 font-bold  ">
         devChallenges.io
       </p>
 

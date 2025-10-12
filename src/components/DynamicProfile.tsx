@@ -97,7 +97,7 @@ const DynamicProfile: React.FC<DynamicProfileProps> = ({ user, repos }) => {
 
       {/* View all repositories */}
       <div className="flex justify-center items-center text-center">
-        <button className="bg-[var(--color-bg)] py-1 px-4 cursor-pointer rounded-lg transition-all duration-300 ease-in-out shadow-[0_6px_20px_rgba(0,198,255,0.6)]">
+        <button className="bg-[var(--color-bg)] py-1 px-4 cursor-pointer rounded-lg transition-all duration-300 ease-in-out ">
           <a href={user.html_url}
             target="_blank"
             rel="noreferrer"> View all repositories

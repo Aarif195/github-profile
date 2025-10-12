@@ -1,13 +1,15 @@
 import React from "react";
 import search from "../assets/icon-search.svg";
+import heroo from "../assets/heroo.jpg";
+
 
 
 interface SearchInputProps {
   value: string;
   onChange: (val: string) => void;
   onSearch: () => void;
-  suggestion: any; // the current suggestion from search
-  defaultSuggestion?: any; // the default GitHub user for page load
+  suggestion: any;
+  defaultSuggestion?: any;
   onSelectSuggestion: (login: string) => void;
 }
 
@@ -19,7 +21,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   defaultSuggestion,
   onSelectSuggestion,
 }) => {
-  // Decide what to show: suggestion after search OR default on page load
+
   const showSuggestion = suggestion || (!value && defaultSuggestion);
 
   console.log("Suggestion data:", showSuggestion);
@@ -27,9 +29,10 @@ const SearchInput: React.FC<SearchInputProps> = ({
 
   return (
     <>
-      <div className="flex justify-center mt-6">
-        <div className="flex bg-[var(--color-bg-light)] md:w-[300px] w-[300px] gap-2 py-2 px-4 border-[3px] border-[var(--color-blue)] rounded-2xl">
-          <img src={search} alt="search" />
+      <div className="  flex justify-center mt-6    bg-cover"   
+>
+        <div className="flex bg-[var(--color-bg-light)] md:w-[300px] w-[300px] gap-2 py-2 px-4 border-[3px] border-[var(--color-blue)] rounded-2xl"  >
+          <img src={search} alt="search"  />
           <input
             value={value}
             onChange={(e) => onChange(e.target.value)}
@@ -55,8 +58,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
               alt=""
               className="w-[25px] h-[25px]"
             />
-         
-
             <div>
               <p>
                 {showSuggestion.name || showSuggestion.login}{" "}

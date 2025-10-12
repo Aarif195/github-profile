@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import heroo from "../assets/heroo.jpg";
+
 
 import SearchInput from "./SearchInput";
 import DefaultProfile from "./DefaultProfile";
@@ -42,18 +44,17 @@ const MainContent = () => {
         setReposData([]);
 
         try {
-            // 🧠 Fetch profile
+            // Fetching  profile
             const profileResponse = await fetch(`https://api.github.com/users/${userToSearch}`);
             if (!profileResponse.ok) throw new Error("User not found");
             const profile = await profileResponse.json();
             console.log(profile)
 
 
-            // 📦 Fetch repos
+            //  Fetching repository
             const reposResponse = await fetch(`https://api.github.com/users/${userToSearch}/repos`);
             const repos = await reposResponse.json();
             console.log(repos)
-
 
 
             if (!Array.isArray(repos)) throw new Error("Failed to load repositories");
@@ -103,14 +104,14 @@ const MainContent = () => {
 
     return (
         <div>
-            <div className="border-6 border-purple-500 rounded-2xl w-full md:w-[900px] h-auto md:md-h-[650px] md:p-0 p-4 bg-[var(--color-bg-light)] shadow-lg">
+            <div className="border-6 border-purple-500 rounded-2xl w-full md:w-[900px] h-auto md:md-h-[650px] md:p-0 p-4 bg-[var(--color-bg-light)] shadow-lg" style={{ backgroundImage: `url(${heroo})` }}>
                 {/* 🔍 Search input */}
                 <SearchInput
                     value={username}
                     onChange={handleSuggestion}
                     onSearch={() => handleSearch()}
                     suggestion={suggestion}
-                    defaultSuggestion={defaultProfile} // show default dropdown on page load
+                    defaultSuggestion={defaultProfile} 
                     onSelectSuggestion={(name) => handleSearch(name)}
                 />
 
@@ -137,3 +138,6 @@ const MainContent = () => {
 };
 
 export default MainContent;
+
+
+// https://builderlab.programmify.org/
